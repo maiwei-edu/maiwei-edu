@@ -1,0 +1,54 @@
+name: api server deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: kirschbaumdevelopment/laravel-test-runner:7.3
+
+    services:
+      mysql:
+        image: mysql:8.1
+        env:
+          MYSQL_ROOT_PASSWORD: 
+          MYSQL_DATABASE: meedu
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install composer dependencies
+      run: |
+        composer install --no-dev
+
+      - name: Prepare Laravel Application
+        run: |
+          php artisan key:generate
+          php artisan jwt:secret
+
+          chmod -R 0777 storage
+          chmod -R 0777 addons
+          chmod -R 0777 public/addons
+
+          php artisan storage:link
+      
+      - name: Mysql data init   # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          php artisan migrate
+          php artisan install role
+          php artisan install config
+          php artisan install administrator
+
+          php artisan install:lock
+      
+      - name: Run server api
+        run: |
+          php artisan serve --host=0.0.0.0 --port=8000
+
+      

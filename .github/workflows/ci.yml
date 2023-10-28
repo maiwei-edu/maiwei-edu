@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install composer dependencies
-      run: |
+        run: |
         composer install --no-dev
 
       - name: Prepare Laravel Application

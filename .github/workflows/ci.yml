@@ -55,12 +55,12 @@ jobs:
       
       - name: Mysql data init   # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
         run: |
-          php artisan migrate
-          php artisan install role
-          php artisan install config
-          php artisan install administrator
+          php artisan migrate --force
+          php artisan install role --force
+          php artisan install config --force
+          php artisan install administrator --force
 
-          php artisan install:lock
+          php artisan install:lock --force
       
       - name: Run server api
         run: |

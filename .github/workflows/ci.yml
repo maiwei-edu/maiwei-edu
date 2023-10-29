@@ -25,7 +25,7 @@ jobs:
 
       - name: Install composer dependencies
         run: |
-        composer install --no-dev
+          composer install --no-dev
 
       - name: Prepare Laravel Application
         run: |
@@ -50,5 +50,3 @@ jobs:
       - name: Run server api
         run: |
           php artisan serve --host=0.0.0.0 --port=8000
-
-      

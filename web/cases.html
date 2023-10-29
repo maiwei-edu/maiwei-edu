@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MeEdu是基于Laravel开发的在线教育点播收费系统，让您一键开展线上教育业务。它可以免费的商业使用。支持视频点播，电子书，图文收费，考试系统，问答，学习路径，视频试看等功能。"
+    />
+    <meta
+      name="keywords"
+      content="在线教育点播系统,在线教育,知识付费,免费的知识付费系统,开源在线教育,开源知识付费,K12教育系统,视频点播系统,meedu"
+    />
+    <title>网校系统-MeEdu开源网校系统，专注于搭建线上教育平台</title>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0669cc49b4ae26e2145a12afeddcf8e3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script>
+      var isMobile = function () {
+        return (
+          navigator.userAgent.match(/(iPhone|Android.*Mobile)/) ||
+          navigator.userAgent.match(/MSIE [6,7,8,9]/)
+        );
+      };
+      if (isMobile()) {
+        window.location.replace("h5.html");
+      }
+    </script>
+
+    <link
+      crossorigin="anonymous"
+      integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+      href="https://lib.baomitu.com/twitter-bootstrap/5.0.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/app.css?v=20230817" />
+  </head>
+
+  <body>
+    <header class="dh">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="header">
+              <div class="logo">
+                <a href="/"
+                  ><img
+                    src="/images/logo.svg?v=20221116"
+                    width="150"
+                    height="40"
+                /></a>
+              </div>
+              <div class="menus">
+                <a class="menu-item" href="/">首页</a>
+                <a class="menu-item" href="/school.html">网校运营</a>
+                <a class="menu-item" href="/train.html">教学培训</a>
+                <a class="menu-item active" href="/cases.html">演示</a>
+                <a class="menu-item" href="/price.html">价格</a>
+                <a class="menu-item" href="/tool.html">成本</a>
+                <a
+                  class="menu-item"
+                  href="https://www.yuque.com/meedu/fvvkbf"
+                  target="_blank"
+                  >文档</a
+                >
+                <a class="menu-item" href="/about.html">关于</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="blocked" style="width: 100%; height: 80px; float: left"></div>
+
+    <div class="case-banner-1">
+      <div class="container" style="width: 1200px !important">
+        <div class="row">
+          <div class="col">
+            <div class="title">MeEdu网校演示站体验</div>
+            <div class="desc">
+              您可使用提供的账号密码登录后台管理体验功能，查看PC网校以及H5显示效果
+            </div>
+            <!-- <div class="thumb">
+                        <img src="/images/cases/case-1.png" width="560">
+                    </div> -->
+            <div class="optionbox">
+              <div class="itemleft">
+                <img src="/images/cases/icon-PC.png" />
+                <div class="name">PC网校演示站</div>
+                <div class="info">
+                  <span class="info1">演示账号：13899990002</span>
+                  <span class="info2">账号密码：123123</span>
+                </div>
+                <a
+                  target="_blank"
+                  class="btn-visit"
+                  href="https://demo.meedu.xyz"
+                  >点击访问</a
+                >
+              </div>
+              <div class="itemright">
+                <div class="item mobile">
+                  <div class="left">
+                    <img width="100" src="/images/cases/icon-mobile.png" />
+                    <div class="name">移动端</div>
+                  </div>
+                  <div class="right">
+                    <div class="info1">演示账号：13899990002</div>
+                    <div class="info2">账号密码：123123</div>
+                    <a class="btn-visit" style="padding: 20px 40px"
+                      >微信扫码访问</a
+                    >
+                    <img
+                      class="erweima"
+                      src="/images/cases/banner-1/demo-h5.png?v=20220221"
+                      width="210"
+                      height="210"
+                    />
+                  </div>
+                </div>
+                <div class="item backend">
+                  <div class="left">
+                    <img width="100" src="/images/cases/icon-backend.png" />
+                    <div class="name">后台管理</div>
+                  </div>
+                  <div class="right">
+                    <div class="info1">演示账号：test@meedu.vip</div>
+                    <div class="info2">账号密码：meedu123</div>
+                    <a
+                      target="_blank"
+                      class="btn-visit2"
+                      href="https://admin.meedu.xyz/"
+                      >点击访问</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 150px" class="title">
+              MeEdu系统同样可应用于安卓端应用，iOS端应用
+            </div>
+            <div class="desc">
+              您可使用提供的账号密码登录后台管理体验功能，查看PC网校以及H5显示效果
+            </div>
+            <div class="optionbox" style="margin-bottom: 100px">
+              <div class="item android">
+                <div class="left">
+                  <img width="100" src="/images/cases/icon-android.png" />
+                  <div class="name">安卓端</div>
+                </div>
+                <div class="right">
+                  <div class="info1">演示账号：13899990002</div>
+                  <div class="info2">账号密码：123123</div>
+                  <a class="btn-visit">扫码下载</a>
+                  <img
+                    class="erweima"
+                    src="/images/cases/banner-1/demo-apk.png?v=20230808"
+                    width="210"
+                    height="210"
+                  />
+                </div>
+              </div>
+              <div class="item ios">
+                <div class="left">
+                  <img width="100" src="/images/cases/icon-ios.png" />
+                  <div class="name">苹果端</div>
+                </div>
+                <div class="right">
+                  <div class="info1">演示账号：13899990002</div>
+                  <div class="info2">账号密码：123123</div>
+                  <a class="btn-visit">扫码下载</a>
+                  <img
+                    class="erweima"
+                    src="/images/cases/banner-1/demo-ios.png?v=20230112"
+                    width="210"
+                    height="210"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kefu-box">
+      <img src="/images/kefu.png?v=20210624" width="250" height="300" />
+    </div>
+
+    <iframe
+      style="vertical-align: bottom"
+      src="./footer.html"
+      width="100%"
+      height="437.31px"
+      frameborder="0"
+      scrolling="no"
+      name="footerFrame"
+    ></iframe>
+
+    <script
+      crossorigin="anonymous"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js"
+    ></script>
+    <script>
+      $(function () {
+        $(".btn-try").click(function () {
+          // 缓存判断
+          $(".demo-site-shadow-box").show();
+        });
+        $(".btn-confirm").click(function () {
+          // 记录手机号
+          var mobileReg = /^[1][3,4,5,7,8][0-9]{9}$/;
+          var mobile = $('input[name="mobile"]').val().trim();
+          if (mobile.length !== 11) {
+            alert("手机号错误");
+            return;
+          }
+          if (!mobileReg.test(mobile)) {
+            alert("手机号错误");
+            return;
+          }
+          // 写入缓存
+          window.localStorage.setItem("demo-input-mobile", mobile);
+          // 跳转到演示站地址
+          $(".demo-shadow-box").hide();
+          $(".demo-site-shadow-box").show();
+        });
+        $(".item>.right>.btn-visit").on("mouseover", function () {
+          $(this).parent().children(".erweima").css("display", "block");
+        });
+        $(".erweima").on("mouseout", function () {
+          $(this).parent().children(".erweima").css("display", "none");
+        });
+      });
+    </script>
+  </body>
+</html>
